@@ -14,7 +14,9 @@ from routes.categories import categories_bp
 from routes.addresses import addresses_bp
 from routes.reviews import reviews_bp
 
-def create_app(config_name='development'):
+
+
+def create_app(config_name='production'):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
     
