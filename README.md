@@ -1,6 +1,6 @@
 # Surplus E-commerce Platform
 
-A full-stack e-commerce platform for buying and selling surplus and near-expiry products at discounted prices.
+A full-stack e-commerce platform for buying and selling surplus and near-expiry products at discounted prices.okey?
 
 ## Problem Statement
 
