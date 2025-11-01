@@ -13,7 +13,7 @@ from routes.vendor import vendor_bp
 from routes.categories import categories_bp
 from routes.addresses import addresses_bp
 from routes.reviews import reviews_bp
-
+    
 
 
 def create_app(config_name='production'):
