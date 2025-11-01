@@ -22,7 +22,17 @@ def create_app(config_name='development'):
     db.init_app(app)
     migrate = Migrate(app, db)
     jwt = JWTManager(app)
-    CORS(app, resources={r"/api/*": {"origins": "*"}})
+    
+    # Enable CORS for your Vercel frontend and local dev
+    CORS(app, resources={
+        r"/api/*": {
+            "origins": [
+                "http://localhost:5173",
+                "https://reuse-l3pi2sv7z-varaprasadmudiraj587-6446s-projects.vercel.app"
+            ],
+            "supports_credentials": True
+        }
+    })
     
     # Create upload folder if it doesn't exist
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
@@ -53,4 +63,4 @@ def create_app(config_name='development'):
 
 if __name__ == '__main__':
     app = create_app(os.getenv('FLASK_ENV', 'development'))
-    app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)), debug=True)
+    app.run(host='0.0.0.0', port=int(os.getenv('PORT', 5000)), debug=False)
