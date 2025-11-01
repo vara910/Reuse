@@ -23,14 +23,12 @@ def create_app(config_name='development'):
     migrate = Migrate(app, db)
     jwt = JWTManager(app)
     
-    # Enable CORS for your Vercel frontend and local dev
+    # ✅ Universal CORS configuration (covers all Vercel subdomains + localhost)
     CORS(app, resources={
-        r"/api/*": {
+        r"/*": {
             "origins": [
                 "http://localhost:5173",
-                "https://reuse-l3pi2sv7z-varaprasadmudiraj587-6446s-projects.vercel.app"
-                
-                "https://reuse-8cs0qnalp-varaprasadmudiraj587-6446s-projects.vercel.app/"
+                "https://*.vercel.app"
             ],
             "supports_credentials": True
         }
