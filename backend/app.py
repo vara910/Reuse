@@ -29,6 +29,7 @@ def create_app(config_name='development'):
             "origins": [
                 "http://localhost:5173",
                 "https://reuse-l3pi2sv7z-varaprasadmudiraj587-6446s-projects.vercel.app"
+                
                 "https://reuse-8cs0qnalp-varaprasadmudiraj587-6446s-projects.vercel.app/"
             ],
             "supports_credentials": True
